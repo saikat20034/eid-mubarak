@@ -113,7 +113,7 @@
 
   <!-- Countdown -->
   <section class="py-16 px-6 bg-green-50 z-10 relative text-center">
-    <h2 data-aos="fade-in" class="text-3xl font-bold text-green-800 mb-4">⏳ Countdown to Our Wedding</h2>
+    <h2 data-aos="fade-in" class="text-3xl font-bold text-green-800 mb-4" id="countdownTitle">⏳ Countdown to Our Wedding</h2>
     <p id="countdown" class="text-2xl font-semibold text-green-700"></p>
   </section>
 
@@ -142,7 +142,7 @@
   <div class="fixed bottom-4 right-4 bg-white/80 rounded-full shadow-lg p-2 z-50 flex items-center space-x-2">
     <button id="musicToggle" aria-label="Play/Pause music" class="text-green-700 hover:text-green-900 text-2xl font-bold">▶️</button>
     <audio id="bgMusic" loop>
-      <source src="https://pixabay.com/music/special-occasions-eid-mubarak-song-2024-201254/" type="audio/mp3" />
+      <source src="https://cdn.pixabay.com/download/audio/2024/04/11/audio_b20ed112e3.mp3?filename=special-occasions-eid-mubarak-song-2024-201254.mp3" type="audio/mp3" />
       Your browser does not support the audio element.
     </audio>
   </div>
@@ -156,77 +156,64 @@
       document.getElementById('surpriseText').classList.remove('hidden');
     }
 
-    // Wedding Countdown
-    const weddingDate = new Date("2025-01-10T00:00:00");
-    const countdownEl = document.getElementById("countdown");
+    // Dates
+    const engagementDate = new Date('2024-05-10T00:00:00');
+    const weddingDate = new Date('2025-01-10T00:00:00');
 
-    function updateCountdown() {
+    // Elements
+    const countdownEl = document.getElementById('countdown');
+    const countdownTitleEl = document.getElementById('countdownTitle');
+    const timeTogetherEl = document.getElementById('timeTogether');
+
+    function formatDuration(ms) {
+      const totalSeconds = Math.floor(ms / 1000);
+      const days = Math.floor(totalSeconds / 86400);
+      const hours = Math.floor((totalSeconds % 86400) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+      return { days, hours, minutes, seconds };
+    }
+
+    function updateTimers() {
       const now = new Date();
-      const diff = weddingDate - now;
 
-      if (diff <= 0) {
-        countdownEl.innerText = "🎉 We're married! Alhamdulillah!";
-        return;
+      // Time together since engagement
+      const togetherMs = now - engagementDate;
+      const together = formatDuration(togetherMs);
+      timeTogetherEl.textContent = `${together.days} days, ${together.hours} hrs, ${together.minutes} mins, ${together.seconds} secs`;
+
+      if (now < weddingDate) {
+        // Countdown to wedding
+        const diff = weddingDate - now;
+        const remaining = formatDuration(diff);
+        countdownTitleEl.textContent = "⏳ Countdown to Our Wedding";
+        countdownEl.textContent = `${remaining.days} days, ${remaining.hours} hrs, ${remaining.minutes} mins, ${remaining.seconds} secs`;
+      } else {
+        // After wedding - show time married
+        const marriedMs = now - weddingDate;
+        const married = formatDuration(marriedMs);
+        countdownTitleEl.textContent = "💍 Time We've Been Married";
+        countdownEl.textContent = `${married.days} days, ${married.hours} hrs, ${married.minutes} mins, ${married.seconds} secs`;
       }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / 1000 / 60) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      countdownEl.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
     }
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
 
-    // Time Together (from engagement date: May 10, 2024)
-    const engagementDate = new Date("2024-05-10T00:00:00");
-    const timeTogetherEl = document.getElementById("timeTogether");
+    setInterval(updateTimers, 1000);
+    updateTimers();
 
-    function updateTimeTogether() {
-      const now = new Date();
-      let diff = now - engagementDate;
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      diff -= days * (1000 * 60 * 60 * 24);
-      const hours = Math.floor(diff / (1000 * 60 * 60));
-      diff -= hours * (1000 * 60 * 60);
-      const minutes = Math.floor(diff / (1000 * 60));
-      diff -= minutes * (1000 * 60);
-      const seconds = Math.floor(diff / 1000);
-
-      timeTogetherEl.innerText = `${days} days ${hours} hrs ${minutes} min ${seconds} sec`;
-    }
-    setInterval(updateTimeTogether, 1000);
-    updateTimeTogether();
-
-    // Background Music Toggle
-    const bgMusic = document.getElementById('bgMusic');
-    const musicToggle = document.getElementById('musicToggle');
+    // Music controls
+    const music = document.getElementById('bgMusic');
+    const toggleBtn = document.getElementById('musicToggle');
     let isPlaying = false;
 
-    function toggleMusic() {
+    toggleBtn.addEventListener('click', () => {
       if (isPlaying) {
-        bgMusic.pause();
-        musicToggle.textContent = '▶️';
+        music.pause();
+        toggleBtn.textContent = '▶️';
       } else {
-        bgMusic.play();
-        musicToggle.textContent = '⏸️';
+        music.play();
+        toggleBtn.textContent = '⏸️';
       }
       isPlaying = !isPlaying;
-    }
-    musicToggle.addEventListener('click', toggleMusic);
-
-    // Try autoplay muted for browsers that block autoplay with sound
-    bgMusic.muted = true;
-    bgMusic.play().then(() => {
-      bgMusic.muted = false;
-      isPlaying = true;
-      musicToggle.textContent = '⏸️';
-    }).catch(() => {
-      // Autoplay failed, wait for user toggle
-      isPlaying = false;
-      musicToggle.textContent = '▶️';
     });
   </script>
 </body>
