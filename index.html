@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eid Mubarak Shetu ❤️</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="manifest" href="manifest.json" />
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #fff7ed, #fde2e4, #fff0f6);
+      overflow-x: hidden;
+    }
+    .floating-stars span {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: #facc15;
+      border-radius: 50%;
+      animation: float 10s linear infinite;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+      }
+      50% {
+        transform: translateY(50vh) scale(1.2);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(0);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-800 relative">
+
+  <!-- Floating Stars Background -->
+  <div class="floating-stars z-0">
+    <span style="left:5%; animation-delay: 0s;"></span>
+    <span style="left:15%; animation-delay: 1s;"></span>
+    <span style="left:25%; animation-delay: 3s;"></span>
+    <span style="left:35%; animation-delay: 2s;"></span>
+    <span style="left:50%; animation-delay: 4s;"></span>
+    <span style="left:65%; animation-delay: 1.5s;"></span>
+    <span style="left:75%; animation-delay: 2.5s;"></span>
+    <span style="left:85%; animation-delay: 0.5s;"></span>
+    <span style="left:95%; animation-delay: 3.5s;"></span>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="relative z-10 min-h-screen flex flex-col items-center justify-center px-6 text-center bg-white/60 backdrop-blur-lg">
+    <h1 data-aos="zoom-in" class="text-5xl md:text-6xl font-extrabold text-green-700 mb-4 animate-bounce">
+      🌙 Eid Mubarak!
+    </h1>
+    <p data-aos="fade-up" class="text-2xl font-medium text-pink-700">To my beautiful wife, Sayema Siddiki Shetu 💖</p>
+    <p data-aos="fade-up" data-aos-delay="100" class="mt-4 text-lg max-w-xl">
+      Wishing you endless joy, boundless peace, and immeasurable love on this blessed day.
+    </p>
+  </section>
+
+  <!-- About Shetu -->
+  <section class="py-16 px-6 bg-pink-50 z-10 relative">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 data-aos="fade-right" class="text-3xl font-bold text-pink-700 mb-6">Who is Shetu?</h2>
+      <p data-aos="fade-left" class="text-lg text-gray-700">
+        Shetu, you are my dream come true. Your presence is my peace. You make my world vibrant with love and light.
+      </p>
+    </div>
+  </section>
+
+  <!-- Message -->
+  <section class="py-16 px-6 bg-white z-10 relative">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 data-aos="fade-up" class="text-3xl font-bold text-green-600 mb-6">A Heartfelt Message</h2>
+      <p data-aos="fade-up" data-aos-delay="100" class="text-lg text-gray-700">
+        Every Eid with you is the best gift. You fill my life with love, joy, and endless meaning. I promise to cherish you forever.
+      </p>
+    </div>
+  </section>
+
+  <!-- Surprise -->
+  <section class="py-16 px-6 bg-yellow-50 z-10 relative">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 data-aos="flip-up" class="text-3xl font-bold text-yellow-600 mb-6">A Little Surprise 🎁</h2>
+      <button onclick="showSurprise()" data-aos="zoom-in-up"
+        class="bg-pink-500 hover:bg-pink-600 text-white py-2 px-6 rounded-full text-lg font-semibold transition">
+        Click to Reveal 💌
+      </button>
+      <p id="surpriseText" class="hidden mt-6 text-xl font-bold text-red-600 transition-opacity duration-700">
+        ❤️ I love you more with every heartbeat. Forever yours, always mine.
+      </p>
+    </div>
+  </section>
+
+  <!-- Photos -->
+  <section class="py-16 px-6 bg-pink-100 z-10 relative">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 data-aos="zoom-in" class="text-3xl font-bold text-pink-800 mb-6">Our Memories 📸</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <img data-aos="fade-up" src="https://i.postimg.cc/3RhGm27x/1-bcfbfgcb.jpg" alt="Photo 1" class="rounded-xl shadow-lg">
+        <img data-aos="fade-up" src="https://i.postimg.cc/RCR71pW5/IMG-20250606-WA0009.jpg" alt="Photo 2" class="rounded-xl shadow-lg">
+        <img data-aos="fade-up" src="https://i.postimg.cc/J0q5GPk8/IMG-20250606-WA0015.jpg" alt="Photo 3" class="rounded-xl shadow-lg">
+        <img data-aos="fade-up" src="https://i.postimg.cc/63VdmYzZ/IMG-20250606-WA0013.jpg" alt="Photo 4" class="rounded-xl shadow-lg">
+        <img data-aos="fade-up" data-aos-delay="200" src="https://i.postimg.cc/QtZQmRgs/IMG-20250606-WA0012.jpg" alt="Photo 5" class="rounded-xl shadow-lg">
+        <img data-aos="fade-up" src="https://i.postimg.cc/wjPcyt71/IMG-20250606-WA0014.jpg" alt="Photo 6" class="rounded-xl shadow-lg">
+      </div>
+    </div>
+  </section>
+
+  <!-- Countdown -->
+  <section class="py-16 px-6 bg-green-50 z-10 relative text-center">
+    <h2 data-aos="fade-in" class="text-3xl font-bold text-green-800 mb-4">⏳ Countdown to Our Wedding</h2>
+    <p id="countdown" class="text-2xl font-semibold text-green-700"></p>
+  </section>
+
+  <!-- Time Together Section -->
+  <section class="py-16 px-6 bg-green-100 z-10 relative text-center">
+    <h2 data-aos="fade-in" class="text-3xl font-bold text-green-800 mb-4">❤️ Time We've Been Together</h2>
+    <p id="timeTogether" class="text-2xl font-semibold text-green-700"></p>
+  </section>
+
+  <!-- Blessing -->
+  <section class="py-16 px-6 bg-gradient-to-br from-green-100 to-white z-10 relative">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 data-aos="fade-in" class="text-2xl font-bold text-green-700 mb-4">May Allah Bless You, My Love</h2>
+      <p data-aos="fade-in" data-aos-delay="100" class="text-gray-800 text-lg">
+        May our love shine brighter than chand raat. Eid Mubarak, jaan!
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-gray-600 text-sm bg-white/40">
+    Made with ❤️ by Your Husband for Sayema Siddiki Shetu | Eid 2025
+  </footer>
+
+  <!-- Background Music Controls -->
+  <div class="fixed bottom-4 right-4 bg-white/80 rounded-full shadow-lg p-2 z-50 flex items-center space-x-2">
+    <button id="musicToggle" aria-label="Play/Pause music" class="text-green-700 hover:text-green-900 text-2xl font-bold">▶️</button>
+    <audio id="bgMusic" loop>
+      <source src="https://pixabay.com/music/special-occasions-eid-mubarak-song-2024-201254/" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function showSurprise() {
+      document.getElementById('surpriseText').classList.remove('hidden');
+    }
+
+    // Wedding Countdown
+    const weddingDate = new Date("2025-01-10T00:00:00");
+    const countdownEl = document.getElementById("countdown");
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = weddingDate - now;
+
+      if (diff <= 0) {
+        countdownEl.innerText = "🎉 We're married! Alhamdulillah!";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / 1000 / 60) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      countdownEl.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Time Together (from engagement date: May 10, 2024)
+    const engagementDate = new Date("2024-05-10T00:00:00");
+    const timeTogetherEl = document.getElementById("timeTogether");
+
+    function updateTimeTogether() {
+      const now = new Date();
+      let diff = now - engagementDate;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      diff -= days * (1000 * 60 * 60 * 24);
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      diff -= hours * (1000 * 60 * 60);
+      const minutes = Math.floor(diff / (1000 * 60));
+      diff -= minutes * (1000 * 60);
+      const seconds = Math.floor(diff / 1000);
+
+      timeTogetherEl.innerText = `${days} days ${hours} hrs ${minutes} min ${seconds} sec`;
+    }
+    setInterval(updateTimeTogether, 1000);
+    updateTimeTogether();
+
+    // Background Music Toggle
+    const bgMusic = document.getElementById('bgMusic');
+    const musicToggle = document.getElementById('musicToggle');
+    let isPlaying = false;
+
+    function toggleMusic() {
+      if (isPlaying) {
+        bgMusic.pause();
+        musicToggle.textContent = '▶️';
+      } else {
+        bgMusic.play();
+        musicToggle.textContent = '⏸️';
+      }
+      isPlaying = !isPlaying;
+    }
+    musicToggle.addEventListener('click', toggleMusic);
+
+    // Try autoplay muted for browsers that block autoplay with sound
+    bgMusic.muted = true;
+    bgMusic.play().then(() => {
+      bgMusic.muted = false;
+      isPlaying = true;
+      musicToggle.textContent = '⏸️';
+    }).catch(() => {
+      // Autoplay failed, wait for user toggle
+      isPlaying = false;
+      musicToggle.textContent = '▶️';
+    });
+  </script>
+</body>
+</html>
